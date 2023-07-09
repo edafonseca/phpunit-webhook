@@ -12,12 +12,9 @@ use PHPUnitWebhook\Subscribers\Prepared;
 
 class PHPUnitWebhookExtension implements Extension
 {
-    public function __construct(private $url, private $appName)
-    {}
-
     public function bootstrap(Configuration $configuration, Facade $facade, ParameterCollection $parameters): void
     {
-        $client = new Webhook($this->url, $this->appName);
+        $client = new Webhook($parameters->get('url'), $parameters->get('appName'));
 
         $facade->registerSubscriber(new Prepared($client));
         $facade->registerSubscriber(new Passed($client));
