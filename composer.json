@@ -1,0 +1,23 @@
+{
+    "name": "edafonseca/phpunit-webhook",
+    "description": "Webhooks for PHPUnit",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "PHPUnitWebhook\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Emmanuel Da Fonseca",
+            "email": "emmanuel.dafonseca@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/http-client": "^6.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.2"
+    }
+}
